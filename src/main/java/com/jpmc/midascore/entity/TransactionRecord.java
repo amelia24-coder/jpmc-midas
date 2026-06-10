@@ -23,21 +23,26 @@ public class TransactionRecord {
     @Column
     private float amount;
 
+    @Column
+    private long incentive;
+
     protected TransactionRecord() {
 
     }
 
-    public TransactionRecord(long transactionId, long senderId, long recipientId, float amount) {
+    public TransactionRecord(long transactionId, long senderId, long recipientId, float amount, long incentive) {
         this.transactionId = transactionId;
         this.senderId = senderId;
         this.recipientId = recipientId;
         this.amount = amount;
+        this.incentive = incentive;
     }
 
-    public TransactionRecord(long senderId, long recipientId, float amount) {
+    public TransactionRecord(long senderId, long recipientId, float amount, long incentive) {
         this.senderId = senderId;
         this.recipientId = recipientId;
         this.amount = amount;
+        this.incentive = incentive;
     }
 
     public long getTransactionId() {
